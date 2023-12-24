@@ -1,0 +1,67 @@
+
+import React,{useState} from 'react'
+import  './App.css';
+const App = () => {
+  const[input,setInput]= useState("");
+  const [result,setResult]=useState("0");
+  const handler =  e =>{
+  setInput(e.target.value);
+  }
+
+  return (
+    <div id="c">
+    <center>
+    <div id="main">
+      <input type="text" value={input} name="input" onChange={handler}/><br/>
+    <button onClick={()=>setResult(eval(input))}>Enter</button>
+    <h4 id="R">Result  : {result}</h4>
+    <button id="A" onClick={()=>setInput(input+"1")}>1</button>
+    
+    <button   id="A"  onClick={()=>setInput(input+"2")}>2</button>
+    <button   id="A" onClick={()=>setInput(input+"3")}>3</button>
+    <button   id="A" onClick={()=>setInput(input+"4")}>4</button><br/>
+    <button  id="A" onClick={()=>setInput(input+"5")}>5</button>
+    <button  id="A" onClick={()=>setInput(input+"6")}>6</button>
+    <button  id="A"  onClick={()=>setInput(input+"7")}>7</button>
+    <button id="A"  onClick={()=>setInput(input+"8")}>8</button><br/>
+    <button id="A"  onClick={()=>setInput(input+"9")}>9</button>
+    <button  id="A" onClick={()=>setInput(input+"0")}>0</button>
+    <button id="A"  onClick={()=>setInput(input+"+")}>+</button>
+    <button id="A"  onClick={()=>setInput(input+"-")}>-</button><br/>
+
+    <button id="A" onClick={()=>setInput(input+"*")}>*</button>
+    <button id="A" onClick={()=>setInput(input+"/")}>/</button>
+    <button id="A" onClick={()=>setInput(input+"%")}>%</button>
+    <button id="b" onClick={()=>setInput('')}>AC</button>
+    </div>
+
+      </center>
+    </div>
+  )
+}
+
+export default App
+
+
+
+#c{
+color: rgba(219, 44, 44, 0.734);
+}
+*{
+  background-color: 	rgb(189, 173, 181);
+}
+#main{
+  width: 220px;
+  height: 220px;
+  background-color: hsla(188, 20%, 54%, 0.521);
+
+}
+#A{
+  color: rgb(0, 2, 2);
+  width: 24px;
+  height: 22px;
+}
+#b{
+  width: 24px;
+  height: 22px;
+}
